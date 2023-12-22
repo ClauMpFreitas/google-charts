@@ -1,0 +1,35 @@
+﻿<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Matérias', 'O quanto eu gosto'],
+          ['Banco de dados',     13.15],
+          ['Economia e finanças',      2.2],
+          ['Inglês',  2.2],
+          ['Arquitetura de computadores', 2.2],
+          ['Programação',    6.57]
+        ]);
+
+        var options = {
+  width: 900,
+  height: 500,
+  title: 'Curso técnico em informática',
+  colors: ['#6959CD', '#00BFFF', '#228B22', '#F4A460', '#8B008B']
+};
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+    <div id="piechart" style="width: 900px; height: 500px;"></div>
+  </body>
+</html>
